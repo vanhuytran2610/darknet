@@ -43,8 +43,8 @@ def YOLO():
 
     global metaMain, netMain, altNames
     configPath = "./cfg/yolov4.cfg"
-    weightPath = "./yolov4.weights"
-    metaPath = "./cfg/coco.data"
+    weightPath = ".backup/custom-yolov4-tiny-detector_best.weights"
+    metaPath = "./data/obj.data"
     if not os.path.exists(configPath):
         raise ValueError("Invalid config path `" +
                          os.path.abspath(configPath)+"`")
@@ -80,7 +80,7 @@ def YOLO():
         except Exception:
             pass
     #cap = cv2.VideoCapture(0)
-    cap = cv2.VideoCapture("test.mp4")
+    cap = cv2.VideoCapture(0)
     cap.set(3, 1280)
     cap.set(4, 720)
     out = cv2.VideoWriter(
